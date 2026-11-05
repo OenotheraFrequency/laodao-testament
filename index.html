@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="一部围绕数字遗产、AI 人格与律师伦理展开的近未来卷宗式互动小说。"
+    />
+    <title>溯码：数字遗言</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23181914'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23c9ad66' stroke-width='4'/%3E%3Cpath d='M19 33h26M32 19v26' stroke='%237b3b35' stroke-width='4'/%3E%3C/svg%3E"
+    />
+    <script type="module" crossorigin src="./assets/index-CVHatsAQ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bh14ajZp.css">
+  </head>
+  <body data-theme="light" data-mobile-view="document">
+    <section id="start-screen" aria-labelledby="start-title">
+      <div class="cover-file">
+        <div class="cover-binding" aria-hidden="true"></div>
+        <div class="cover-classification">
+          <span>溯码律所 · 内部承办卷</span>
+          <span>INTERNAL / SML-2040-1115</span>
+        </div>
+        <div class="cover-kicker">数字遗产争议案 · 承办卷</div>
+        <div class="cover-case-row">
+          <span class="case-code">SML-2040-1115</span>
+          <span class="cover-stamp" id="cover-stamp">待承办</span>
+        </div>
+        <h1 class="start-title" id="start-title">溯码</h1>
+        <div class="start-subtitle">数字遗言</div>
+        <p class="cover-deck">
+          一名律师，一份真实上链却签署主体不明的数字遗嘱。庭前会议前，你要先保全仍可复核的事实。
+        </p>
+
+        <div class="cover-directive" aria-label="承办目标">
+          <span>承办指令 01</span>
+          <strong>在证据成为叙事以前，先保全仍可复核的事实。</strong>
+        </div>
+
+        <dl class="cover-facts">
+          <div>
+            <dt>争议标的</dt>
+            <dd>数字人格使用权</dd>
+          </div>
+          <div>
+            <dt>庭前会议</dt>
+            <dd>次日上午 10:00</dd>
+          </div>
+          <div>
+            <dt>结案档案</dt>
+            <dd><span id="ending-total">0</span> 种结果</dd>
+          </div>
+        </dl>
+
+        <div class="cover-actions">
+          <button class="primary-action" id="btn-start" type="button">
+            接受委托
+          </button>
+          <button
+            class="secondary-action"
+            id="btn-continue"
+            type="button"
+            hidden
+          >
+            继续承办
+          </button>
+          <button class="text-action" id="btn-endings" type="button" disabled>
+            查看结案档案
+          </button>
+        </div>
+
+        <p class="cover-status" id="start-clear-hint"></p>
+        <p class="cover-brief" id="first-run-hint"></p>
+        <footer class="cover-credit">
+          本作保留早期 AI 协作生成的原剧情；V3 重做为卷宗式互动体验。
+          <button class="inline-action" id="btn-about" type="button">
+            创作说明
+          </button>
+        </footer>
+      </div>
+    </section>
+
+    <div id="app-shell" aria-hidden="true" hidden inert>
+      <a class="skip-link" href="#document-display">跳到主要内容</a>
+      <header id="matter-bar">
+        <button
+          id="btn-return-hub"
+          class="event-chrome-action"
+          type="button"
+          aria-label="返回案件桌面"
+        >
+          <span aria-hidden="true">←</span>
+          <span class="return-hub-long" aria-hidden="true">返回案件桌面</span>
+          <span class="return-hub-short" aria-hidden="true">案件桌</span>
+        </button>
+        <div class="matter-identity">
+          <span class="matter-mark" aria-hidden="true">溯</span>
+          <div>
+            <div class="matter-number">SML-2040-1115</div>
+            <div class="matter-name">刘刀鸣数字遗产争议</div>
+          </div>
+        </div>
+        <div class="matter-stage" aria-live="polite">
+          <span class="stage-index" id="stage-index">01</span>
+          <span>
+            <span class="stage-label" id="stage-label">案件受理</span>
+            <span class="route-label" id="route-label">正式承办</span>
+          </span>
+          <div class="event-chrome-title">
+            <span>EVENT <b id="event-index">01</b></span>
+            <strong id="event-title">新案受理摘要</strong>
+          </div>
+        </div>
+        <div class="matter-actions">
+          <span class="save-state" id="save-state" aria-live="polite"
+            >本地自动保存</span
+          >
+          <button class="bar-action" id="btn-route" type="button">
+            路线档案
+          </button>
+          <button class="bar-action strong" id="btn-menu" type="button">
+            案卷菜单
+          </button>
+          <div class="event-chrome-tools">
+            <button
+              id="btn-docket-panel"
+              class="event-chrome-action"
+              type="button"
+              aria-pressed="false"
+            >
+              行动记录
+            </button>
+            <button
+              id="btn-evidence-panel"
+              class="event-chrome-action"
+              type="button"
+              aria-pressed="false"
+            >
+              证物袋
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section id="case-hub" aria-labelledby="case-hub-title">
+        <div class="hub-atmosphere" aria-hidden="true"></div>
+        <header class="hub-brief">
+          <div class="hub-brief-copy">
+            <span class="hub-eyebrow">在办案件 · SML-2040-1115</span>
+            <h1 id="case-hub-title">刘刀鸣数字遗产争议</h1>
+            <p>
+              四方同时主张一个已经死亡的人。下一次行动，将决定哪一种证据先成为事实。
+            </p>
+          </div>
+          <div class="hub-classification" aria-label="案件密级与承办机构">
+            <span class="hub-classification-seal" aria-hidden="true">溯</span>
+            <span><b>内部案卷</b><small>仅限承办律师阅览</small></span>
+          </div>
+          <dl class="hub-deadline">
+            <div>
+              <dt>程序节点</dt>
+              <dd id="hub-current-phase">案件受理</dd>
+            </div>
+            <div>
+              <dt>材料时点</dt>
+              <dd id="hub-material-time">晚上十一点十七</dd>
+            </div>
+          </dl>
+          <button class="hub-resume" id="btn-resume-event" type="button">
+            <span>
+              <small id="hub-resume-label">继续当前事件</small>
+              <strong id="hub-resume-title">新案受理摘要</strong>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </header>
+
+        <ol
+          class="hub-phase-track"
+          id="hub-phase-track"
+          aria-label="案件程序进度"
+        >
+          <li data-hub-phase="intake"><b>01</b><span>案件受理</span></li>
+          <li data-hub-phase="investigation"><b>02</b><span>事实核验</span></li>
+          <li data-hub-phase="position"><b>03</b><span>立场形成</span></li>
+          <li data-hub-phase="hearing"><b>04</b><span>庭前处置</span></li>
+          <li data-hub-phase="closed"><b>05</b><span>结案归档</span></li>
+        </ol>
+
+        <div class="hub-grid">
+          <section class="hub-map" aria-label="沪杭案件行动地图">
+            <div class="hub-map-heading">
+              <div>
+                <div class="hub-section-label">案件行动图 / 沪杭走廊</div>
+                <strong>证据、人物与程序所在的位置</strong>
+              </div>
+              <div class="hub-map-legend" aria-label="图例">
+                <span>◎ 当前事件</span>
+                <span>○ 已发现</span>
+                <span>— 材料路线</span>
+              </div>
+            </div>
+            <div class="hub-map-canvas">
+              <div class="case-map-geography">
+                <img
+                  class="case-map-image"
+                  src="./assets/art/maps/shanghai-hangzhou-case-map-v06-modern.svg"
+                  alt=""
+                />
+                <div class="case-map-route" aria-hidden="true">
+                  <span>沪杭材料通道</span>
+                </div>
+
+                <button
+                  class="case-location location-lawfirm"
+                  type="button"
+                  data-hub-location="lawfirm"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>溯码律所</b><small>上海市中心 · 承办基地</small></span
+                  >
+                </button>
+                <button
+                  class="case-location location-court"
+                  type="button"
+                  data-hub-location="court"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>互联网法院</b><small>上海长宁 · 程序机关</small></span
+                  >
+                </button>
+                <button
+                  class="case-location location-apartment"
+                  type="button"
+                  data-hub-location="apartment"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>刘刀鸣公寓</b
+                    ><small>杭州钱江新城 · 死亡现场</small></span
+                  >
+                </button>
+                <button
+                  class="case-location location-deepmind"
+                  type="button"
+                  data-hub-location="deepmind"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>深瞳科技园</b><small>杭州西湖区 · 神经数据</small></span
+                  >
+                </button>
+                <button
+                  class="case-location location-studio"
+                  type="button"
+                  data-hub-location="studio"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>递归猫工作室</b
+                    ><small>未来科技城 · 模型节点</small></span
+                  >
+                </button>
+                <button
+                  class="case-location location-corridor"
+                  type="button"
+                  data-hub-location="corridor"
+                >
+                  <span class="location-marker" aria-hidden="true"></span>
+                  <span class="location-copy"
+                    ><b>沪杭途中</b><small>嘉兴附近 · 移动事件</small></span
+                  >
+                </button>
+
+                <button
+                  class="distant-map-slip"
+                  type="button"
+                  data-hub-location="dali"
+                  hidden
+                >
+                  <span>西南附图已展开</span>
+                  <b>大理</b>
+                  <small>私人关系线</small>
+                </button>
+              </div>
+              <aside class="map-terrain-key" aria-label="地图地形图例">
+                <header>
+                  <strong>地形</strong><small>真实高程 · DEM</small>
+                </header>
+                <div class="terrain-key-row terrain-key-elevation">
+                  <i></i><i></i><i></i> <span>平原</span><span>丘陵</span
+                  ><span>山地</span>
+                </div>
+                <div class="terrain-key-row terrain-key-cover">
+                  <i></i><i></i><i></i> <span>农田</span><span>林地</span
+                  ><span>水网</span>
+                </div>
+                <footer>MAPZEN + OSM</footer>
+              </aside>
+            </div>
+            <footer class="case-map-caption">
+              <span id="hub-map-caption">当前材料由上海 · 溯码律所送达</span>
+              <span
+                ><a
+                  href="https://registry.opendata.aws/terrain-tiles/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >地形 © Mapzen Terrain Tiles</a
+                >
+                ·
+                <a
+                  href="https://www.openstreetmap.org/copyright"
+                  target="_blank"
+                  rel="noreferrer"
+                  >地理资料 © OpenStreetMap contributors</a
+                >；点击地点查看状态</span
+              >
+            </footer>
+          </section>
+
+          <aside
+            id="hub-location-intel"
+            class="hub-dispatch"
+            aria-label="地点内参信息"
+            hidden
+          >
+            <div class="dispatch-masthead">
+              <span>案件地图内参</span>
+              <div class="intel-masthead-actions">
+                <time datetime="2040-11-15">2040 · 11 · 15</time>
+                <button
+                  id="btn-close-intel"
+                  class="intel-close"
+                  type="button"
+                  aria-label="收起地点内参"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+            <figure id="hub-location-art" class="hub-location-art" hidden>
+              <img id="hub-location-art-image" alt="" />
+              <figcaption id="hub-location-art-caption"></figcaption>
+            </figure>
+            <div class="hub-section-label dispatch-section-label">
+              地点内参 · <span id="hub-current-index">LOC-01</span>
+            </div>
+            <div class="dispatch-status">
+              <span class="dispatch-pulse" aria-hidden="true"></span>
+              <span id="hub-intel-status">已接入案件地图</span>
+            </div>
+            <h2 id="hub-current-title">溯码律所</h2>
+            <div id="hub-intel-kind" class="intel-kind">承办节点</div>
+            <p id="hub-current-summary">
+              承办基地；大部分电话、材料核验与策略行动从这里发出。
+            </p>
+            <dl class="dispatch-meta">
+              <div>
+                <dt>来源</dt>
+                <dd id="hub-current-source">本周目地点档案</dd>
+              </div>
+              <div>
+                <dt>关联</dt>
+                <dd id="hub-current-location">承办节点</dd>
+              </div>
+              <div>
+                <dt>权限</dt>
+                <dd id="hub-intel-watershed">内部只读</dd>
+              </div>
+              <div id="hub-risk-row" data-risk-tone="stable">
+                <dt>状态</dt>
+                <dd>
+                  <b id="hub-risk-label">已发现</b
+                  ><small id="hub-risk-detail">当前无可执行行动</small>
+                </dd>
+              </div>
+            </dl>
+            <div class="intel-parameter-grid" aria-label="内参参数">
+              <div><span>关联材料</span><b id="hub-intel-materials">01</b></div>
+              <div><span>情报等级</span><b id="hub-intel-range">B</b></div>
+              <div><span>行动权限</span><b id="hub-intel-signal">只读</b></div>
+            </div>
+            <button id="btn-open-event" class="dispatch-open" type="button">
+              <span id="hub-intel-action-label">进入当前事件</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </aside>
+        </div>
+
+        <footer class="hub-statusline" aria-label="案件状态摘要">
+          <span><b id="hub-material-count">01</b> 已归档材料</span>
+          <span><b id="hub-people-count">04</b> 已知主张方</span>
+          <span><b id="hub-action-count">00</b> 已执行行动</span>
+          <span><b id="hub-unread-count">01</b> 未阅证据</span>
+          <span class="hub-save-indicator" id="hub-save-state">案卷待保存</span>
+        </footer>
+      </section>
+
+      <section id="event-stage" aria-label="当前事件舞台" hidden>
+        <div id="workspace">
+          <aside id="docket-rail" aria-label="本周目卷宗">
+            <div class="panel-heading">
+              <span class="panel-kicker">卷宗</span>
+              <h2>本周目记录</h2>
+            </div>
+            <div id="docket-content" tabindex="-1"></div>
+          </aside>
+
+          <main id="document-workspace">
+            <section
+              id="document-display"
+              tabindex="-1"
+              aria-label="当前案件材料"
+            ></section>
+            <section id="action-area" aria-label="下一步代理行动"></section>
+          </main>
+
+          <aside id="case-panel" aria-label="案件工作底稿">
+            <div class="case-tabs" role="tablist" aria-label="案件资料分类">
+              <button
+                class="case-tab active"
+                id="tab-evidence"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="case-panel-content"
+                data-case-tab="evidence"
+              >
+                证据
+                <span class="tab-count" id="evidence-count">0</span>
+              </button>
+              <button
+                class="case-tab"
+                id="tab-people"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="case-panel-content"
+                tabindex="-1"
+                data-case-tab="people"
+              >
+                人物
+              </button>
+              <button
+                class="case-tab"
+                id="tab-stance"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="case-panel-content"
+                tabindex="-1"
+                data-case-tab="stance"
+              >
+                立场
+              </button>
+            </div>
+            <div
+              id="case-panel-content"
+              role="tabpanel"
+              tabindex="-1"
+              aria-labelledby="tab-evidence"
+            ></div>
+          </aside>
+        </div>
+      </section>
+
+      <nav id="mobile-nav" aria-label="移动端工作区">
+        <button type="button" data-mobile-view="docket">卷宗</button>
+        <button class="active" type="button" data-mobile-view="document">
+          当前材料
+        </button>
+        <button type="button" data-mobile-view="casefile">证据与人物</button>
+      </nav>
+    </div>
+
+    <div
+      id="drawer-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="drawer-title"
+    >
+      <section class="case-drawer" tabindex="-1">
+        <div class="drawer-header">
+          <div>
+            <div class="panel-kicker">案卷</div>
+            <h2 id="drawer-title">案卷菜单</h2>
+          </div>
+          <button
+            class="drawer-close"
+            id="drawer-close"
+            type="button"
+            aria-label="关闭"
+          >
+            关闭
+          </button>
+        </div>
+        <div id="drawer-content"></div>
+      </section>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  </body>
+</html>
